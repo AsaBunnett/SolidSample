@@ -7,6 +7,7 @@ public class JsonDeserializationHelper<T>
 {
     private JsonSerializerOptions options = new()
     {
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         Converters = { new JsonStringEnumConverter() }
     };
 

@@ -21,7 +21,11 @@ namespace ArdalisRating
 
             string policyJson = fileReader.GetStringFromFile("policy.json");
 
+            logger.Log(policyJson);
+
             var policy = policyDeserializer.DeserializeString(policyJson);
+
+            logger.Log(policy.Type.ToString());
             var factory = new PolicyRaterFactory(logger);
             var rater = factory.GetRater(policy);
 
